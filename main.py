@@ -1,12 +1,13 @@
 from Helpers.AzureHelper import AzureHelper
 from Helpers.GithubHelper import GithubHelper
 import time
+import os
 
 def main():
     try:
         # Initialize helpers
         azure_helper = AzureHelper()
-        github_helper = GithubHelper()
+        github_helper = GithubHelper(os.path.dirname(os.path.abspath(__file__)))
 
         # Get all commit data from Azure
         azure_commits = azure_helper.get_all_commit_data()
