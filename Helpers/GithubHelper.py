@@ -4,8 +4,8 @@ from Utils.StringUtils import get_commit_id
 
 class GithubHelper:
 
-    def __init__(self):
-        self.repo_path = os.getcwd()
+    def __init__(self, repo_path):
+        self.repo_path = repo_path
         self.repo = Repo(self.repo_path)
         
 
