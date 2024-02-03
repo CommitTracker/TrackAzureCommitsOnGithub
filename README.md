@@ -15,6 +15,6 @@ Make sure to give the Token **Code Read** access.
 
 - Create and clone a fork of this repository.
 - Open app settings and update it with relevant information: `https://dev.azure.com/{yourOrganization}/{yourProject}/_git/{yourRepo}`
-- If you are having package issues run the [`installer.bat`](https://github.com/illuminat3/TrackAzureCommitsOnGithub/blob/main/installer.bat) script.
+- If you are having package issues run the [`installer.bat`](https://github.com/illuminat3/TrackAzureCommitsOnGithub/blob/linux/installer.sh) script.
 
 
