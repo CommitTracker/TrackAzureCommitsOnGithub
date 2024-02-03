@@ -1,4 +1,4 @@
-# Track Azure Devops Commits on Github
+# Track Azure Devops Commits on Github (linux)
 
 **_Description_**
 
