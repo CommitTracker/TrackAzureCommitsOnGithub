@@ -1,4 +1,4 @@
-# Azure To Devops Commit
+# Track Azure Devops Commits on Github
 
 **_Description_**
 
