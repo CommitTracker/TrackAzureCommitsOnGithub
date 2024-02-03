@@ -1,10 +1,10 @@
 Azure To Devops Commit
 
-<i>Description</i>
+<b><i>Description</i></b>
 
 This checks for any pushes to a repo in devops and then creates commits in a github repo.
 
-<i>Pre Requisites</i>
+<b><i>Pre Requisites</i></b>
 
 This was created with [Python Version 3.11.7](https://www.python.org/downloads/release/python-3117)
 
@@ -14,7 +14,7 @@ Create a Personal Access Token in devops: [Personal Access Token Guide](https://
 
 Make sure to give the Token <b>Code Read</b> access
 
-<i>How To Use</i>
+<b><i>How To Use</i></b>
 
 Create and clone a fork of this repository.
 
