@@ -13,7 +13,8 @@ Make sure to give the Token **Code Read** access.
 
 **_How To Use_**
 
-- Create and clone a fork of this repository.
+- Use the template to create a new private repository
+- Clone that repository to the local machine
 - Open app settings and update it with relevant information: `https://dev.azure.com/{yourOrganization}/{yourProject}/_git/{yourRepo}`
 - If you are having package issues run the [`installer.bat`](https://github.com/illuminat3/TrackAzureCommitsOnGithub/blob/main/installer.bat) script.
 
