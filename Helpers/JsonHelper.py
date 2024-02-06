@@ -5,27 +5,21 @@ class JsonHelper:
     def __init__(self):
         self.root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.file_path = os.path.join(self.root_dir, 'appsettings.json')
-        self.config = self._load_config()
+        self.apps = self._load_apps()  # Load apps configuration on initialization
 
-    def _load_config(self):
+    def _load_apps(self):
+        """Private method to load app configurations from the JSON file."""
         try:
             with open(self.file_path, 'r') as config_file:
-                return json.load(config_file)
+                data = json.load(config_file)
+                return data.get('Apps', [])  # Return the list of app configurations
         except FileNotFoundError:
             print("Configuration file not found.")
-            return {}
+            return []
         except json.JSONDecodeError:
             print("Error decoding JSON from configuration file.")
-            return {}
+            return []
 
-    def get_pat(self):
-        return self.config.get('AppName', {}).get('PAT', None)
-
-    def get_organization(self):
-        return self.config.get('AppName', {}).get('Organization', None)
-
-    def get_project(self):
-        return self.config.get('AppName', {}).get('Project', None)
-
-    def get_repo(self):
-        return self.config.get('AppName', {}).get('Repo', None)
+    def GetData(self):
+        """Public method to get the list of app configurations."""
+        return self.apps
