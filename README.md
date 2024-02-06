@@ -13,7 +13,7 @@ Make sure to give the Token **Code Read** access.
 
 **_How To Use_**
 
-- Create and clone a fork of this repository.
+- Press use this template and create a copy of this repository.
 - Open app settings and update it with relevant information: `https://dev.azure.com/{yourOrganization}/{yourProject}/_git/{yourRepo}`
 - If you are having package issues run the [`installer.sh`](https://github.com/illuminat3/TrackAzureCommitsOnGithub/blob/linux/installer.sh) script.
 
