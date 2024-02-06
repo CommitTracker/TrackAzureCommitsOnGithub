@@ -3,12 +3,11 @@ from Helpers.JsonHelper import JsonHelper
 import base64
 
 class AzureHelper:
-    def __init__(self):
-        self.config = JsonHelper()
-        self.pat = self.config.get_pat()
-        self.organization = self.config.get_organization()
-        self.project = self.config.get_project()
-        self.repo = self.config.get_repo()
+    def __init__(self, data):
+        self.pat = data["PAT"]
+        self.organization = data["Organization"]
+        self.project = data["Project"]
+        self.repo = data["Repo"]
         self.base_url = f"https://dev.azure.com/{self.organization}/{self.project}/_apis/git/repositories/{self.repo}/commits"
 
     def _get_headers(self):
