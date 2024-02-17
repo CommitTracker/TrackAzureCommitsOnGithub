@@ -34,7 +34,7 @@ def main():
                 print(f"No new commits in {data["Organization"]}/{data["Project"]/{data["Repo"]} to update to GitHub.")
 
 
-            print(f"{len(new_to_azure)} commits to push.")
+            print(f"{len(new_to_azure)} commits to push from {data["Organization"]}/{data["Project"]/{data["Repo"]}.")
 
             for commit in new_to_azure:
                 # Try to commit each new commit to GitHub
