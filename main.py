@@ -43,7 +43,7 @@ def main():
                 except Exception as e:
                     print(f"Failed to commit {commit} to GitHub: {e}")
 
-            print("Process completed successfully.")
+        print("\nProcess completed successfully.")
 
     
     except Exception as e:
