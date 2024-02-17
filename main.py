@@ -31,7 +31,7 @@ def main():
             # Find commits new to Azure
             new_to_azure = azure_commits_set - github_commits_set
             if not new_to_azure:
-                print("No new commits in Azure to update to GitHub.")
+                print(f"No new commits in {data["Organization"]}/{data["Project"]/{data["Repo"]} to update to GitHub.")
 
 
             print(f"{len(new_to_azure)} commits to push.")
