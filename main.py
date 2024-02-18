@@ -1,7 +1,6 @@
 from Helpers.AzureHelper import AzureHelper
 from Helpers.GithubHelper import GithubHelper
 from Helpers.JsonHelper import JsonHelper
-import time
 
 def main():
     JsHelper = JsonHelper()
@@ -9,6 +8,7 @@ def main():
     try:
         # Initialize helpers
         for data in apps_data:
+            print("")
             azure_helper = AzureHelper(data)
             github_helper = GithubHelper()
 
