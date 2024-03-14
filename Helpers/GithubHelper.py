@@ -1,6 +1,7 @@
 from git import Repo
 import os
 from Utils.StringUtils import get_commit_id
+from datetime import datetime
 
 class GithubHelper:
 
@@ -9,7 +10,7 @@ class GithubHelper:
         self.repo = Repo(self.repo_path)
         
 
-    def commit(self, commit_message, commit_location, file_name='Test.txt', file_content=''):
+    def commit(self, commit_message, commit_location, file_name='Test.txt', file_content='', commit_date: datetime = datetime.now()):
         """
         Creates a new file with the provided content, commits it, and then pushes to the remote repository.
         
@@ -17,6 +18,7 @@ class GithubHelper:
         :param commit_location: The relative path within the repository where the file should be created. Ensure this path exists or is created.
         :param file_name: The name of the new file.
         :param file_content: The content to write into the new file.
+        :param commit_date: The date of the commit. By default, it is the current date and time. Change to make a retroactive commit
         """
 
         # Build the complete file path
@@ -31,9 +33,9 @@ class GithubHelper:
         
         # Git add and commit
         self.repo.index.add([file_path])
-        self.repo.index.commit(commit_message)
-        
-        # Push the changes
+        self.repo.index.commit(commit_message, commit_date=commit_date)
+        #
+        ## Push the changes
         origin = self.repo.remote(name='origin')
         origin.push()
         print(f'{commit_message}, Changes pushed successfully.')
