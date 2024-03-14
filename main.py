@@ -2,10 +2,12 @@ from datetime import datetime
 from Helpers.AzureHelper import AzureHelper
 from Helpers.GithubHelper import GithubHelper
 from Helpers.JsonHelper import JsonHelper
+import pytz
 
 def main():
     JsHelper = JsonHelper()
     apps_data = JsHelper.GetData()
+    local_tz = datetime.now(pytz.timezone('UTC')).astimezone().tzinfo
     
     try:
         # Initialize helpers
@@ -46,8 +48,8 @@ def main():
                 # Try to commit each new commit to GitHub
                 try:
                     date_format = '%Y-%m-%dT%H:%M:%SZ'
-                    commit_date = datetime.strptime(commit['committer']['date'], date_format)
-                    github_helper.commit(commit, "commits", f"{commit}.txt", commit_date=commit_date)
+                    commit_date = datetime.strptime(commit['committer']['date'], date_format).replace(tzinfo=local_tz)
+                    github_helper.commit(commit['comment'], "commits", f"{commit['commitId']}.txt", commit_date=commit_date)
                 except Exception as e:
                     print(f"Failed to commit {commit} to GitHub: {e}")
 
