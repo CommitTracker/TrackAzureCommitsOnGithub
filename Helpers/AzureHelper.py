@@ -4,8 +4,8 @@ import requests
 import base64
 
 class AzureHelper:
-    def __init__(self, data, track_only_master: bool = True):
-        self.track_only_master = track_only_master
+    def __init__(self, data,):
+        self.track_only_main = data["Track_only_main"]
         self.branches = list()
         self.pat = data["PAT"]
         self.organization = data["Organization"]
@@ -24,10 +24,10 @@ class AzureHelper:
         response = requests.get(f"{self.branches_url}", headers=self._get_headers())
         soup = BeautifulSoup(response.text, 'html.parser')
         json_element = json.loads(soup.find('script', id='dataProviders').contents[0])
-        if self.track_only_master:
+        if self.track_only_main:
             branches_data = json_element['data']['ms.vss-code-web.my-branches-data-provider']['Git.Branches.Default']
             branches_names = [branches_data['name'].split('/')[-1]]
-            print(f'Tracking only {branches_names[0]} branch, if you want to track all branches in {self.repo}, please set "Track_only_master" to false in appsettings.json!')
+            print(f'Tracking only {branches_names[0]} branch, if you want to track all branches in {self.repo}, please set "Track_only_main" to false in appsettings.json!')
         else:
             branches_data = json_element['data']['ms.vss-code-web.my-branches-data-provider']['Git.Branches.Mine']
             branches_names = [branch['name'].split('/')[-1] for branch in branches_data]
