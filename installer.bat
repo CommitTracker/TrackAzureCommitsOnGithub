@@ -26,5 +26,12 @@ if "%defaultsFound%"=="1" (
 echo Installing GitPython...
 python -m pip install GitPython
 
+:: Install BS4
+echo Installing BS4...
+python -m pip install beautifulsoup4
+
+:: Failsafe
+python -m pip install -r requirements.txt
+
 echo Done.
 endlocal
