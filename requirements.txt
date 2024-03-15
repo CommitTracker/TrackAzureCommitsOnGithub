@@ -1,2 +1,4 @@
-GitPython==3.1.42
+beautifulsoup4==4.12.3
+GitPython==3.1.41
+pytz==2024.1
 requests==2.31.0

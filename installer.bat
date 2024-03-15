@@ -22,9 +22,24 @@ if "%defaultsFound%"=="1" (
     exit /b 1
 )
 
+:: Install Requests
+echo Installing Requests...
+python -m pip install requests
+
 :: Install GitPython
 echo Installing GitPython...
 python -m pip install GitPython
+
+:: Install BS4
+echo Installing BS4...
+python -m pip install beautifulsoup4
+
+:: Install pytz
+echo Installing pytz...
+python -m pip install pytz
+
+:: Failsafe
+python -m pip install -r requirements.txt
 
 echo Done.
 endlocal
