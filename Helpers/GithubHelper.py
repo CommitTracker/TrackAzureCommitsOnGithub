@@ -33,7 +33,7 @@ class GithubHelper:
         
         # Git add and commit
         self.repo.index.add([file_path])
-        self.repo.index.commit(commit_message, commit_date=commit_date)
+        self.repo.index.commit(commit_message, commit_date=commit_date, author_date=commit_date)
         #
         ## Push the changes
         origin = self.repo.remote(name='origin')
