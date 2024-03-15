@@ -13,7 +13,7 @@ def main():
         # Initialize helpers
         for data in apps_data:
             print("")
-            azure_helper = AzureHelper(data, track_only_main=data['Track_only_main'])
+            azure_helper = AzureHelper(data)
             github_helper = GithubHelper()
 
             # Get all commit data from Azure
