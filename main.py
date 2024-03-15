@@ -49,7 +49,8 @@ def main():
                 try:
                     date_format = '%Y-%m-%dT%H:%M:%SZ'
                     commit_date = datetime.strptime(commit['committer']['date'], date_format).replace(tzinfo=local_tz)
-                    github_helper.commit(commit['comment'], "commits", f"{commit['commitId']}.txt", commit_date=commit_date)
+                    commit_message = f'[{data["Repo"]}]: {commit["comment"]}'
+                    github_helper.commit(commit_message, "commits", f"{commit['commitId']}.txt", commit_date=commit_date)
                 except Exception as e:
                     print(f"Failed to commit {commit} to GitHub: {e}")
 
